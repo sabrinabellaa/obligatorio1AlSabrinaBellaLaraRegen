@@ -8,7 +8,7 @@
 > restricciones de órdenes, indicarlo.
 
 ## Ejercicio 1
-- Sin restricciones de órdenes. / Justificación: ...
+- Justificación: La letra exige ALTA y BUSCAR en O(log K) y RANGO en O(log K + R). Usamos un árbol AVL: al estar balanceado su altura es O(log K), ALTA y BUSCAR recorren un único camino y las rotaciones son O(1). RANGO es un inorden que solo visita los caminos hacia desde y hasta (O(log K)) más los R nodos que imprime.
 
 ## Ejercicio 2
 - Sin restricciones de órdenes. / Justificación: ...

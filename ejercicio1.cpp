@@ -1,7 +1,5 @@
-#include <cassert>
 #include <string>
 #include <iostream>
-#include <limits>
 
 using namespace std;
 
@@ -14,7 +12,7 @@ struct NodoAVL {
 
     NodoAVL(T elem) {
         dato = elem;
-        altura =1;
+        altura = 1;
         izq = NULL;
         der = NULL;
     }
@@ -35,14 +33,16 @@ private:
         return getAltura(nodo->der) - getAltura(nodo->izq);
     }
 
+    int max(int a, int b) {
+        return (a > b) ? a : b;
+    }
+
     int calcularAltura(NodoAVL<T>* nodo) {
         if(!nodo) return 0;
         return 1 + max(getAltura(nodo->izq), getAltura(nodo->der));
-    } // esta bien hacerlo aca?
+    }
 
-    int max(){} // hacer???
-
-    NodoAVL<T>* insertarRec (NodoAVL<T>*& nodo, T elem) {
+    NodoAVL<T>* insertarRec (NodoAVL<T>* nodo, T elem) {
 
         if (!nodo) return new NodoAVL<T>(elem);
 
@@ -55,9 +55,7 @@ private:
         }
 
         nodo->altura = calcularAltura(nodo);
-        cout << "Nodo: " << nodo->dato << endl;
         int balance = getBalance(nodo);
-        cout << "Balance: " << balance << endl;
 
         // Rotaciones para mantener el equilibrio
         if (balance < -1 && elem < nodo->izq->dato) {
@@ -78,14 +76,14 @@ private:
         return nodo;
     }
 
-    bool existeRec(NodoAVL<T>* nodo, T elem) {
+    bool buscarRec(NodoAVL<T>* nodo, T elem) {
         if(!nodo) return false;
         if(elem == nodo->dato) return true;
 
         if (elem < nodo->dato) {
-            return existeRec(nodo->izq, elem);
+            return buscarRec(nodo->izq, elem);
         } else {
-            return existeRec(nodo->der, elem);
+            return buscarRec(nodo->der, elem);
         }
 
     }
@@ -98,7 +96,7 @@ private:
         }
 
         if(nodo->dato >= desde && nodo->dato <= hasta){
-            cout << nodo->dato << endl;
+            cout << nodo->dato << '\n';
         }
         
         if(nodo->dato < hasta) {
@@ -141,12 +139,65 @@ private:
         raiz = insertarRec(raiz, elem);
     }
 
-    bool existe(T elem) {
-        return existeRec(raiz, elem);
+    bool buscar(T elem) {
+        return buscarRec(raiz, elem);
     }
 
     void rango(T desde, T hasta) {
         rangoRec(raiz, desde, hasta);
-    }
-    
+    }  
 };
+
+int main() {
+    AVL<long long> monedas;
+    AVL<string> pinturas;
+
+    int n;
+    cin >> n;
+
+    for (int i = 0; i < n; i++) {
+        string operacion;
+        string coleccion;
+        cin >> operacion >> coleccion;
+
+        if (coleccion == "M"){
+            if (operacion == "ALTA") {
+                long long valor;
+                cin >> valor;
+                monedas.insertar(valor);
+            } else if (operacion == "BUSCAR") {
+                long long valor;
+                cin >> valor;
+                if (monedas.buscar(valor)) {
+                    cout << "si" << '\n';
+                } else {
+                    cout << "no" << '\n';
+                }
+            } else if (operacion == "RANGO") {
+                long long desde, hasta;
+                cin >> desde >> hasta;
+                monedas.rango(desde, hasta);
+            }
+        } else {
+            if (operacion == "ALTA") {
+                string valor;
+                cin >> valor;
+                pinturas.insertar(valor);
+            } else if (operacion == "BUSCAR") {
+                string valor;
+                cin >> valor;
+                if (pinturas.buscar(valor)) {
+                    cout << "si" << '\n';
+                } else {
+                    cout << "no" << '\n';
+                }
+            } else if (operacion == "RANGO") {
+                string desde, hasta;
+                cin >> desde >> hasta;
+                pinturas.rango(desde, hasta);
+            }
+        }
+    }
+
+    return 0;
+}

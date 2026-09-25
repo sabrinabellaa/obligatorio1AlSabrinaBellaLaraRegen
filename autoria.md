@@ -8,7 +8,10 @@
 > con comentarios en el código fuente. La omisión de fuentes puede considerarse plagio.
 
 ## Ejercicio 1
-- Implementación íntegramente propia, sin fuentes externas. Nos basamos en el ejercicio AVL hecho en clase
+- Utilizamos el ejercicio de AVL hecho en clase para la clase del AVL.
+- Para la función max, no sabíamos si estaba importada o no y consultamos con Claude si había que implementarla.
+- También usamos Claude cuando terminamos el ejercicio para que corrobore que se cumplan todas las consignas pedidas en la letra.
+- Pedimos a Claude que nos explique bien cómo funciona el long long.
 
 ## Ejercicio 2
 - Implementación íntegramente propia, sin fuentes externas.
