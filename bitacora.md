@@ -1,6 +1,6 @@
 # Bitácora — Obligatorio 1
 
-**Integrantes:** Nombre Apellido (Nº estudiante), Nombre Apellido (Nº estudiante)
+**Integrantes:** Sabrina Bella (326445), Nombre Apellido (Nº estudiante)
 
 > **Instrucciones** (borrar esta sección antes de entregar): agregar una entrada por
 > cada día trabajado, indicando la fecha y quién trabajó (un integrante o "En conjunto").
@@ -9,10 +9,9 @@
 > abiertas. Si se usó IA ese día, indicar herramienta, consulta y qué se hizo con la
 > respuesta. Una bitácora escrita íntegramente el día de la entrega implica pérdida de puntos.
 
-## AAAA-MM-DD — Nombre
-- Ejemplo: Leí la letra del ejercicio 1. Primera idea: ... pero la restricción de
-  complejidad pide ..., así que ...
+## 2026-10-09 — Sabrina y Lara
+- Clonamos el repositorio y comenzamos a leer las consignas
 
-## AAAA-MM-DD — En conjunto
+## 2026-25-09 — En conjunto
 - Ejemplo: Implementamos ... Bug: ... Lo corregimos ...
 - Pasan los casos de prueba 1 a 4 del ejercicio 1.

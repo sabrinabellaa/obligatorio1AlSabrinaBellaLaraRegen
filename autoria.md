@@ -8,7 +8,7 @@
 > con comentarios en el código fuente. La omisión de fuentes puede considerarse plagio.
 
 ## Ejercicio 1
-- Implementación íntegramente propia, sin fuentes externas.
+- Implementación íntegramente propia, sin fuentes externas. Nos basamos en el ejercicio AVL hecho en clase
 
 ## Ejercicio 2
 - Implementación íntegramente propia, sin fuentes externas.
