@@ -15,3 +15,6 @@
 ## 2026-25-09 — En conjunto
 - Hicimos el struct y la clase del AVL del ejercicio 1, incluyendo las funciones de insertar, buscar y rango.
 - Hicimos el main, chequeamos que el código coincida con lo pedido en la consigna y corrimos las pruebas con Claude, checkeamos que correspondan con lo esperado.
+
+## 2026-12-12 - Sabrina Bella
+- Agregue la funcion destruir en el ejercicio 1
