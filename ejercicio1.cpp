@@ -130,9 +130,20 @@ private:
         return B;
     }
 
+    void destruir(NodoAVL<T>* nodo) {
+        if(!nodo) return;
+        destruir(nodo->izq);
+        destruir(nodo->der);
+        delete nodo;
+    }
+
     public:
-    AVL(){
+    AVL() {
         raiz = NULL;
+    }
+
+    ~AVL() {
+        destruir(raiz);
     }
 
     void insertar(T elem) {
