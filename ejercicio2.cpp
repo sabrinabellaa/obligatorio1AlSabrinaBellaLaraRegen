@@ -3,15 +3,13 @@
 
 using namespace std;
 
-const int ALFABETO = 26;
-
 class HashAbierto {
     private:
 
     struct Clave {
-        int conteo[ALFABETO]; // letras del alfabeto
-        bool operator==(const Clave& otra) const {  // sonIguales??? const????
-            for(int i=0; i<lfBETO; i++) {
+        int conteo[26]; // letras del alfabeto
+        bool sonIguales(Clave otra) {
+            for(int i=0; i<26; i++) {
                 if(conteo[i] != otra.conteo[i]) return false;
             }
             return true;
@@ -35,9 +33,9 @@ class HashAbierto {
     int cantCajones;
     int cantCajonMasGrande;
 
-    Clave arrayClave (const string& palabra) {
+    Clave arrayClave ( string palabra) {
         Clave c;
-        for(int i=0; i<ALFABETO; i++) {
+        for(int i=0; i<26; i++) {
             c.conteo[i] = 0;
         }
         for(char letra : palabra) {
@@ -46,23 +44,23 @@ class HashAbierto {
         return c;
     }
 
-    int fHash(const Clave& c) {
+    int fHash(Clave c) {
         int h = 0;
         int base = 31;
-        for(int i=0; i<ALFABETO; i++) {
+        for(int i=0; i<26; i++) {
             h = (h*base + c.conteo[i]) % cantBuckets;
         }
         return h;
     }
 
-    NodoHash* buscarNodo(const Clave& c) {
-        int cajon = fhash(c);
+    NodoHash* buscarNodo(Clave c) {
+        int cajon = fHash(c);
         NodoHash* aux = tabla[cajon];
         while(aux) {
-            if(aux.->lave == c) {
+            if(aux->clave.sonIguales(c)) {
                 return aux;
             }
-            aux=aux->sig;
+            aux = aux->sig;
         }
         return NULL;
     }
@@ -75,30 +73,30 @@ class HashAbierto {
         cantCajonMasGrande = 0;
     }
 
-    destruir() {
+    void destruir() {
         for(int i=0; i<cantBuckets; i++) {
             NodoHash *actual = tabla[i];
             while(actual) {
                 NodoHash *siguiente = actual->sig;
-                delete actual; 
-                actual = siguiente
+                delete actual;
+                actual = siguiente;
             }
         }
         delete[] tabla;
     }
 
-    registrar(const &string palabra) {
+    void registrar(string palabra) {
         Clave clave = arrayClave(palabra);
-        int cajon = fhash(clave);
+        int cajon = fHash(clave);
         NodoHash *act = tabla[cajon];
         bool encontrado = false;
 
         while(act && !encontrado) {
-            if(act->clave == clave) {
-                act->contador ++;
+            if(act->clave.sonIguales(clave)) {
+                act->contador++;
                 encontrado = true;
                 if(act->contador > cantCajonMasGrande) {
-                    cantCajonMasGrande = act->contador
+                    cantCajonMasGrande = act->contador;
                 }
             }
             act = act->sig;
@@ -110,16 +108,9 @@ class HashAbierto {
             tabla[cajon] = nuevo;
             cantCajones++;
             if(nuevo->contador > cantCajonMasGrande) {
-                    cantCajonMasGrande = nuevo->contador
+                cantCajonMasGrande = nuevo->contador;
             }
         }
-
-    }
-
-    int consultar(const string& palabra) {
-        Clave clave = arrayClave(palabra);
-        NodoHash* nodo = buscarNodo(clave);
-        return nodo ? nodo->contador : 0;
     }
 
 };
