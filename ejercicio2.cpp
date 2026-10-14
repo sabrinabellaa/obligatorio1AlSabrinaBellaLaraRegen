@@ -113,21 +113,49 @@ class HashAbierto {
         }
     }
 
+    int consultar(string palabra) {
+        Clave clave = arrayClave(palabra);
+        NodoHash* nodo = buscarNodo(clave);
+        if (nodo) {
+            return nodo->contador;
+        } else {
+            return 0;
+        }
+    }
+
+    int getCantCajonMasGrande() {
+        return cantCajonMasGrande;
+    }
+
+    int getCantCajones() {
+        return cantCajones;
+    }
 };
 
+
 int main() {
-    HashAbierto hash(10); // cantBuckets chico, solo para probar
+    int cantRegistros;
+    cin >> cantRegistros;
 
-    hash.registrar("roma");
-    hash.registrar("amor");
-    hash.registrar("mora");
-    hash.registrar("sol");
-    hash.registrar("los");
-    hash.registrar("casa");
+    int buckets = 2 * cantRegistros + 1;
+    HashAbierto hash(buckets);
 
-    cout << hash.consultar("ramo") << endl;   // esperado: 3
-    cout << hash.consultar("sol") << endl;    // esperado: 2
-    cout << hash.consultar("perro") << endl;  // esperado: 0
+    for(int i=0; i<cantRegistros; i++) {
+        string palabraR;
+        cin >> palabraR;
+        hash.registrar(palabraR);
+    }
 
+    int cantConsultas;
+    cin >> cantConsultas;
+    for(int i=0; i<cantConsultas; i++) {
+        string palabraC;
+        cin >> palabraC;
+        int cantCaj = hash.consultar(palabraC);
+        cout << cantCaj << endl;
+    }
+
+    cout << hash.getCantCajones() << " " << hash.getCantCajonMasGrande() << endl;
+    hash.destruir();
     return 0;
 }
