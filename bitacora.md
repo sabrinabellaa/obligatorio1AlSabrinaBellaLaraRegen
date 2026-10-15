@@ -17,9 +17,16 @@
 - Hicimos el main, chequeamos que el código coincida con lo pedido en la consigna y corrimos las pruebas con Claude, checkeamos que correspondan con lo esperado.
 
 ## 2026-10-10 - Sabrina Bella
-- Agregue la funcion destruir en el ejercicio 1
-- Empece ejercicio 2, hice la parte privada de la clase
+- Agregué la función destruir en el ejercicio 1.
+- Empecé ejercicio 2, hice la parte privada de la clase.
 
 ## 2026-13-10 - Sabrina Bella y Lara Regen
-- Ejercicio 2: Hicimos la parte publica de la clase y el main
-- compila, probamos todos los ejemplos de la letra y dan bien.
+- Ejercicio 2: Hicimos la parte pública de la clase y el main, y chequeamos que el código coincida con lo pedido en la consigna.
+- Compila, en este caso, probamos todos los ejemplos de la letra nosotras con g++ -std=c++11 -o ejercicio2 ejercicio2.cpp y dan bien.
+
+## 2026-15-10 - Sabrina Bella y Lara Regen
+- Ejercicio 3: Hicimos un TADheapBinario, en el que hicimos su clase, con la estructura y las operaciones del TAD.
+- Luego hicimos el main en ejercicio3.cpp
+- Compila, probamos todos los ejemplos de la letra con g++ -std=c++11 -o ejercicio3 ejercicio3.cpp y dan bien.
+
+

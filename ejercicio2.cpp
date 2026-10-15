@@ -6,8 +6,8 @@
 using namespace std;
 
 class HashAbierto {
+    
     private:
-
     struct Clave {
         int conteo[26]; // letras del alfabeto
         bool sonIguales(Clave otra) {
