@@ -2,7 +2,7 @@
 #include <string>
 #include <iostream>
 #include <limits>
-#include "TADheapBinario.h"
+#include "tads/HeapBinario.cpp"
 
 using namespace std;
 

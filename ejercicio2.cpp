@@ -70,7 +70,7 @@ class HashAbierto {
     public:
     HashAbierto(int cantBucketsParam) {
         cantBuckets = cantBucketsParam;
-        tabla = new NodoHash*[cantBuckets](); //() inicializan todos los buckets en NULL
+        tabla = new NodoHash*[cantBuckets](); 
         cantCajones = 0;
         cantCajonMasGrande = 0;
     }
