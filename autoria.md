@@ -11,7 +11,7 @@
 - Pedimos ayuda a Claude para que nos explique la letra antes de realizar el ejercicio.
 
 ## Ejercicio 3
-- Nos apoyamos en el ejercicio de Heap Binario hecho en la clase. La implementación es propia. El Heap binario también es propio y lo reutilizamos en los ejercicios 4 y 5.
+- Nos apoyamos en el ejercicio de Heap Binario hecho en la clase. La implementación es propia y reutilizamos el Heap Binario en los ejercicios 4 y 5.
 
 ## Ejercicio 4
 - El orden topológico está basado en el algoritmo de Kahn visto en clase, que teníamos implementado con una pila. Lo adaptamos para usar nuestro heap del ejercicio 3, ordenando por prioridad y, si empatan, por número de módulo.
