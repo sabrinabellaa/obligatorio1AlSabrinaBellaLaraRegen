@@ -134,12 +134,25 @@ class HashAbierto {
     }
 };
 
+bool esPrimo(int n) {
+    if (n < 2) return false;
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) return false;
+    }
+    return true;
+}
+int siguientePrimo(int n) {
+    while (!esPrimo(n)) {
+        n++;
+    }
+    return n;
+}
 
 int main() {
     int cantRegistros;
     cin >> cantRegistros;
 
-    int buckets = 2 * cantRegistros + 1;
+    int buckets = siguientePrimo(2 * cantRegistros + 1);
     HashAbierto hash(buckets);
 
     for(int i=0; i<cantRegistros; i++) {
