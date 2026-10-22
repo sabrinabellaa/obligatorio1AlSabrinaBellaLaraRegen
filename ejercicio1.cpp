@@ -96,7 +96,7 @@ private:
         }
 
         if(nodo->dato >= desde && nodo->dato <= hasta){
-            cout << nodo->dato << '\n';
+            cout << nodo->dato << endl;
         }
         
         if(nodo->dato < hasta) {
@@ -180,9 +180,9 @@ int main() {
                 long long valor;
                 cin >> valor;
                 if (monedas.buscar(valor)) {
-                    cout << "si" << '\n';
+                    cout << "si" << endl;
                 } else {
-                    cout << "no" << '\n';
+                    cout << "no" << endl;
                 }
             } else if (operacion == "RANGO") {
                 long long desde, hasta;
@@ -198,9 +198,9 @@ int main() {
                 string valor;
                 cin >> valor;
                 if (pinturas.buscar(valor)) {
-                    cout << "si" << '\n';
+                    cout << "si" << endl;
                 } else {
-                    cout << "no" << '\n';
+                    cout << "no" << endl;
                 }
             } else if (operacion == "RANGO") {
                 string desde, hasta;
